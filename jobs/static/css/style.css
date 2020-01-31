@@ -1,0 +1,61 @@
+/*search box css start here*/
+.carousel{
+margin-top: 0px;
+}
+
+
+.carousel-item{
+height: 550px;
+max-width: 100%;
+max-height: 100vh;
+}
+
+
+.bs-example{
+margin: 20px;
+}
+
+
+.search-sec{
+padding: 2rem;
+}
+
+
+.search-slt{
+display: block;
+width: 100%;
+font-size: 1.5rem;
+line-height: 1.5;
+color: #55595c;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+height: calc(4rem + 2px) !important;
+border-radius:0;
+
+}
+
+
+.wrn-btn{
+width: 100%;
+font-size: 20px;
+font-weight: 400;
+text-transform: capitalize;
+height: calc(4rem + 2px) !important;
+border-radius:0;
+}
+
+
+@media (min-width: 992px){
+.search-sec{
+position: relative;
+top: 0px;
+background: rgba(26, 70, 104, 0.51);
+}
+}
+
+@media (max-width: 992px){
+.search-sec{
+background: #1A4668;
+}
+}
