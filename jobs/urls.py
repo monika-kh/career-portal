@@ -1,8 +1,14 @@
 from django.urls import path
-from .views import main_view
+from .views import index_view, detail_view, description_view
+    # , job_post
+from . import views
 
 
 urlpatterns = [
-    path('main/', main_view),
+    path('index/', views.index_view),
+    path('detail/', views.detail_view),
+    path('description/', views.description_view),
+
+    # path('post/', views.job_post),
 ]
 

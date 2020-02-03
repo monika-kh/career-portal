@@ -1,0 +1,91 @@
+{% load custom_tags %}
+{% jobs_obj as jobs %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="/static/css/detail.css" rel="stylesheet">
+<table id="result_list">
+    <thead>
+    <tr>
+        <th scope="col"  class="sortable column-quantity">
+            <div class="text"><a href="?o=3">public_id</a></div>
+            <div class="clear"></div>
+        </th>
+        <th scope="col"  class="sortable column-quantity">
+            <div class="text"><a href="?o=3">job_id</a></div>
+            <div class="clear"></div>
+        </th>
+        <th scope="col"  class="sortable column-id">
+            <div class="text"><a href="?o=1">title</a></div>
+            <div class="clear"></div>
+        </th>
+        <th scope="col"  class="sortable column-quantity">
+            <div class="text"><a href="?o=3">description</a></div>
+            <div class="clear"></div>
+        </th>
+        <th scope="col"  class="sortable column-user_id">
+            <div class="text"><a href="?o=2"> city</a></div>
+            <div class="clear"></div>
+        </th>
+        <th scope="col"  class="sortable column-quantity">
+            <div class="text"><a href="?o=3">state</a></div>
+            <div class="clear"></div>
+        </th>
+        <th scope="col"  class="sortable column-quantity">
+            <div class="text"><a href="?o=3">country</a></div>
+            <div class="clear"></div>
+        </th>
+        <th scope="col"  class="sortable column-quantity">
+            <div class="text"><a href="?o=3">expiry_date</a></div>
+            <div class="clear"></div>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for jobs_data_all in jobs %}
+    <tr class="row1">
+        <td class="field-user_id nowrap" >{{ jobs_data_all.public_id }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.job_id }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.title }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.description }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.city }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.state }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.country }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.expiry_date }}</td>
+        <td>
+
+    </tr>
+    {% endfor %}
+
+    </tbody>
+    </table>
+<!--</table>-->
+<!--<table class="table">-->
+<!--  <thead class="thead-dark">-->
+<!--    <tr>-->
+<!--      <th scope="col">#</th>-->
+<!--      <th scope="col">title</th>-->
+<!--      <th scope="col">city</th>-->
+<!--      <th scope="col">expiry_date</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <th scope="row">1</th>-->
+<!--      <td>Mark</td>-->
+<!--      <td>Otto</td>-->
+<!--      <td>@mdo</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">3</th>-->
+<!--      <td>Larry</td>-->
+<!--      <td>the Bird</td>-->
+<!--      <td>@twitter</td>-->
+<!--    </tr>-->
+<!--</tbody>--
