@@ -27,3 +27,6 @@ def description_view(request, job_id):
         'job_functions': job_functions
     }
     return render(request, 'description.html', {"context1": context1})
+
+def subscribe_view(request):
+    return render(request, 'subscribe.html')
