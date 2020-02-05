@@ -9,20 +9,21 @@
     <tr>
 
         <th scope="col"  class="sortable column-id">
-            <div class="text"><a href="?o=1">title</a></div>
+            <div class="text"><a href="?o=1">Title</a></div>
+            <div class="clear"></div>
+        </th>
+
+        <th scope="col"  class="sortable column-user_id">
+            <div class="text"><a href="?o=2">City</a></div>
             <div class="clear"></div>
         </th>
         <th scope="col"  class="sortable column-quantity">
-            <div class="text"><a href="?o=3">technology</a></div>
-            <div class="clear"></div>
-        </th>
-        <th scope="col"  class="sortable column-user_id">
-            <div class="text"><a href="?o=2"> city</a></div>
+            <div class="text"><a href="?o=3">Functions</a></div>
             <div class="clear"></div>
         </th>
 
         <th scope="col"  class="sortable column-quantity">
-            <div class="text"><a href="?o=3">apply_by</a></div>
+            <div class="text"><a href="?o=3">Apply_By</a></div>
             <div class="clear"></div>
         </th>
 
@@ -35,8 +36,8 @@
 <!--        <td class="field-user_id nowrap" >{{ jobs_data_all.job_id }}</td>-->
 
         <td class="field-user_id nowrap" ><a href="/jobs/description/{{ jobs_data_all.job_id }}/">{{ jobs_data_all.title }}</a></td>
-        <td class="field-user_id nowrap" >{{ jobs_data_all.technology }}</td>
         <td class="field-user_id nowrap" >{{ jobs_data_all.city }}</td>
+        <td class="field-user_id nowrap" >{{ jobs_data_all.job_functions }}</td>
         <td class="field-user_id nowrap" >{{ jobs_data_all.apply_by }}</td>
         <td>
 

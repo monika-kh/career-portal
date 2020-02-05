@@ -3,7 +3,7 @@ from django import template
 register = template.Library()
 
 
-from ..models import Jobs, Technology
+from ..models import Jobs, Technology, Role
 
 
 @register.simple_tag
@@ -16,3 +16,9 @@ def jobs_obj():
 def technology_obj():
     technology_obj = Technology.objects.all()
     return technology_obj
+
+
+@register.simple_tag
+def role_obj():
+    role_obj = Role.objects.all()
+    return role_obj

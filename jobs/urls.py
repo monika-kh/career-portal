@@ -1,6 +1,5 @@
 from django.urls import path
 from .views import index_view, detail_view, description_view
-    # , job_post
 from . import views
 
 
@@ -9,6 +8,5 @@ urlpatterns = [
     path('detail/', views.detail_view),
     path('description/<int:job_id>/', views.description_view),
 
-    # path('post/', views.job_post),
 ]
 

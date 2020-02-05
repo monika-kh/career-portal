@@ -4,7 +4,6 @@ from django.db import models
 # Create your models here.
 
 class Technology(models.Model):
-    # id = models.AutoField()
     name = models.CharField(max_length=50)
     status = models.CharField(choices=([("active", "active"), ("inactive", "inactive")]),
                               max_length=25,
@@ -17,13 +16,27 @@ class Technology(models.Model):
         return self.name
 
 
+class Role(models.Model):
+    role_name = models.CharField(max_length=50)
+    status = models.CharField(choices=([("active", "active"), ("inactive", "inactive")]),
+                              max_length=25,
+                              default="active")
+    created = models.DateField()
+    updated = models.DateField()
+    deleted = models.DateField()
+
+    def __str__(self):
+        return self.role_name
+
+
 class Jobs(models.Model):
-    # id
     public_id = models.IntegerField()
     job_id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=50)
     date = models.DateField()
-    technology = models.ForeignKey(Technology, on_delete=models.CASCADE, related_name='technology')
+    desired_skills = models.ForeignKey(Technology, on_delete=models.CASCADE, related_name='technology')
+    job_role = models.ForeignKey(Role, on_delete=models.CASCADE, related_name='role')
+    job_functions = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
     location = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
@@ -36,7 +49,7 @@ class Jobs(models.Model):
 
 
 class Subscribers(models.Model):
-    # id
+    name = models.CharField(max_length=50)
     email = models.EmailField(max_length=250)
     status = models.CharField(choices=([("active", "active"), ("inactive", "inactive")]),
                               max_length=25,
@@ -44,3 +57,6 @@ class Subscribers(models.Model):
     created = models.DateField()
     updated = models.DateField()
     delete = models.DateField()
+
+    def __str__(self):
+        return self.name

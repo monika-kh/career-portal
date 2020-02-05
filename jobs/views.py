@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Jobs
+from .models import Jobs, Technology, Role
 
 
 # Create your views here.
@@ -13,13 +13,17 @@ def detail_view(request):
 
 
 def description_view(request, job_id):
-    descp = list(Jobs.objects.filter(job_id=job_id).values('description'))
-    job_id = Jobs.objects.filter(job_id=job_id).values('description')
-    technology = list(Jobs.objects.filter(job_id=job_id).values('technology'))
-    context = {
+    job = Jobs.objects.get(job_id=job_id)
+    descp = job.description
+    desired_skills = job.desired_skills
+    job_role = job.job_role
+    job_functions = job.job_functions
+
+    context1 = {
         'descp': descp,
-        # 'job_id': job_id,
-        'technology': technology,
+        'job': job_id,
+        'desired_skills': desired_skills,
+        'job_role': job_role,
+        'job_functions': job_functions
     }
-    breakpoint()
-    return render(request, 'description.html', {"context": context})
+    return render(request, 'description.html', {"context1": context1})
