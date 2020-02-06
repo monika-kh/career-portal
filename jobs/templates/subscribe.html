@@ -1,20 +1,24 @@
-<link href="/static/css/subscribe.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/static/css/subscribe.css' type='text/css' />
+</head>
+{% csrf_token %}
 
-
-<div class="container">
-
-
+<body onload='document.form1.text1.focus()'>
+<div class="mail">
+    <form name="form1" action="" method="post">
+        <ul>
+            <h2>Subscribe Now</h2>
+            <input type="text" name="text1" placeholder="Enter your Email Id"><br><br>
+            <input type="text" name="name" placeholder="Enter your name"><br><br>
+            <input type="submit" name="submit" value="Subscribe" onclick="ValidateEmail(document.form1.text1)"/>
+        </ul>
+    </form>
 </div>
-<section class="bg-dark text-center p-5 mt-4">
-    <div class="container p-3">
-        <h3 class="text-white">SUBSCRIBE NOW</h3>
-        <form action="#" method="Post">
-            <input type="text" name="text" placeholder="Enter Your Email Id" >
-            <br><input type="text" name="text" placeholder="Enter Your Name">
-            <br><button type="button" onclick="location.href='/jobs/detail/'"  class="btn btn-default">Subscribe<i class="fa fa-envelope"></i></button>
-        </form>
-    </div>
-</section>
+<script src="/static/js/subscribe.js"></script>
+</body>
+</html>
+
+
