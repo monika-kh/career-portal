@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Jobs, Technology, Role, Subscribers
+from .models import Jobs, TechnicalSkills, Subscribers
 
 
 # Create your views here.
@@ -30,15 +30,14 @@ def description_view(request, job_id):
 
 
 def subscribe_view(request):
-    breakpoint()
-    # if request.method == 'POST':
-    #     if request.POST.get('email') and request.POST.get('name'):
-    #         post = Post()
-    #         post.title = request.POST.get('email')
-    #         post.content = request.POST.get('name')
-    #         post.save()
-    #
-    #         return render(request, 'subscribe.html')
-    #
-    # else:
-    #     return render(request, 'subscribe.html')
+    if request.method == 'POST':
+        if request.POST.get('email') and request.POST.get('name'):
+            post = Subscribers()
+            post.email = request.POST.get('email')
+            post.name = request.POST.get('name')
+            post.save()
+
+            return render(request, 'subscribe.html')
+
+    else:
+        return render(request, 'subscribe.html')

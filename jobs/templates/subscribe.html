@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <link rel='stylesheet' href='/static/css/subscribe.css' type='text/css' />
 </head>
-{% csrf_token %}
+
 
 <body onload='document.form1.text1.focus()'>
 <div class="mail">
-    <form name="form1" action="" method="post">
+    <form action="" method="post">
+        {% csrf_token %}
         <ul>
             <h2>Subscribe Now</h2>
-            <input type="text" name="text1" placeholder="Enter your Email Id"><br><br>
-            <input type="text" name="name" placeholder="Enter your name"><br><br>
+            <input type="text" name="email" placeholder="Enter Email"><br><br>
+            <input type="text" name="name" placeholder="Enter Name"><br><br>
             <input type="submit" name="submit" value="Subscribe" onclick="ValidateEmail(document.form1.text1)"/>
         </ul>
     </form>
