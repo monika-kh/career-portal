@@ -1,48 +1,18 @@
-{% load custom_tags %}
-{% jobs_obj as jobs %}
-{% technology_obj as technology %}
+{% extends "base.html" %}
+{% block menu %}
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="/static/css/detail.css" rel="stylesheet">
-<table id="result_list">
-    <thead>
-    <tr>
+<div class="header">
+    <nav>
+        <a>Home</a>
+        <a>My saved Jobs</a>
+        <a>Login</a>
+    </nav>
+</div>
 
-        <th scope="col"  class="sortable column-id">
-            <div class="text"><a href="?o=1">Title</a></div>
-            <div class="clear"></div>
-        </th>
+    <div class="div">
+        <p>{{context.keywords}}</p>
+        <p>{{context.location}}</p>
+        <p>{{context.exp}}</p>
+    </div>
+{% endblock %}
 
-        <th scope="col"  class="sortable column-user_id">
-            <div class="text"><a href="?o=2">City</a></div>
-            <div class="clear"></div>
-        </th>
-        <th scope="col"  class="sortable column-quantity">
-            <div class="text"><a href="?o=3">Functions</a></div>
-            <div class="clear"></div>
-        </th>
-
-        <th scope="col"  class="sortable column-quantity">
-            <div class="text"><a href="?o=3">Apply_By</a></div>
-            <div class="clear"></div>
-        </th>
-
-    </tr>
-    </thead>
-    <tbody>
-    {% for jobs_data_all in jobs %}
-    <tr class="row1">
-
-<!--        <td class="field-user_id nowrap" >{{ jobs_data_all.job_id }}</td>-->
-
-        <td class="field-user_id nowrap" ><a href="/jobs/description/{{ jobs_data_all.job_id }}/">{{ jobs_data_all.title }}</a></td>
-        <td class="field-user_id nowrap" >{{ jobs_data_all.city }}</td>
-        <td class="field-user_id nowrap" >{{ jobs_data_all.job_functions }}</td>
-        <td class="field-user_id nowrap" >{{ jobs_data_all.apply_by }}</td>
-        <td>
-
-    </tr>
-    {% endfor %}
-
-    </tbody>
-    </table>

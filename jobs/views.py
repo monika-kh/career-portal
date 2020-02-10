@@ -8,8 +8,19 @@ def index_view(request):
     return render(request, "index.html")
 
 
-def detail_view(request):
-    return render(request, "details.html")
+def search_job_view(request):
+    if request.method == "POST":
+        keywords = request.POST.get('keywords')
+        location = request.POST.get('location')
+        exp = request.POST.get('experience')
+        # job = Jobs.objects.all()
+        # job_name = Jobs.objects.all().filter(job_name='job_name')
+        context = {
+            "keywords": keywords,
+            "location": location,
+            "exp": exp
+        }
+        return render(request, "details.html", {"context": context})
 
 
 def description_view(request, job_id):
@@ -26,6 +37,7 @@ def description_view(request, job_id):
         'job_role': job_role,
         'job_functions': job_functions
     }
+
     return render(request, 'description.html', {"context1": context1})
 
 
