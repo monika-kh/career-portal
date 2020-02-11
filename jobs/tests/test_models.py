@@ -26,8 +26,8 @@ class TestModels(TestCase):
         self.job_name = "test job"
         self.job_description = "test coder"
         self.tag = "backend"
-        self.min_exp = "0.00"
-        self.max_exp = "0.05"
+        self.min_exp = "1.0"
+        self.max_exp = "1.5"
         self.active = True
         self.start_date = datetime.date.today()
         self.end_date = datetime.date.today() + datetime.timedelta(days=2)
@@ -45,7 +45,7 @@ class TestModels(TestCase):
             skill=self.technical_skills,
         )
         self.subscriber_public_id = 1
-        self.subscriber_name = "test"
+        self.subscriber_name = "test_subscriber"
         self.email = "test@test.com"
         self.location = "indore"
         self.status = True
@@ -59,7 +59,7 @@ class TestModels(TestCase):
         )
 
         self.apply_public_id = 1
-        self.user_name = "test_name"
+        self.user_name = "test_user"
         self.resume = "media/test.pdf"
         self.skills = self.technical_skills
 
@@ -111,7 +111,7 @@ class TestModels(TestCase):
         assert subscriber_create.name == self.subscriber_name
         assert subscriber_create.email == self.email
         assert subscriber_create.location == self.location
-        assert subscriber_create.status== self.status
+        assert subscriber_create.status == self.status
 
     def test_apply(self):
         apply = Apply.objects.create(
