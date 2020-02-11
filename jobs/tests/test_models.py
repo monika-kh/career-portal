@@ -69,9 +69,9 @@ class TestModels(TestCase):
             description=self.description,
             public_id=self.skill_public_id,
         )
-        self.assert skills.name == self.skill_name
-        self.assert skills.description == self.description
-        self.assert skills.public_id == self.skill_public_id
+        assert skills.name == self.skill_name
+        assert skills.description == self.description
+        assert skills.public_id == self.skill_public_id
 
     def test_jobs(self):
         test_jobs = Jobs.objects.get(
@@ -87,16 +87,16 @@ class TestModels(TestCase):
             skill=self.technical_skills,
         )
 
-        self.assert test_jobs.public_id == self.job_public_id
-        self.assert test_jobs.job_name == self.job_name
-        self.assert test_jobs.job_description == self.job_description
-        self.assert test_jobs.tag == self.tag
-        self.assert test_jobs.max_exp == Decimal(self.max_exp)
-        self.assert test_jobs.min_exp == Decimal(self.min_exp)
-        self.assert test_jobs.active == self.active
-        self.assert test_jobs.start_date == self.start_date
-        self.assert test_jobs.end_date == self.end_date
-        self.assert test_jobs.skill == self.technical_skills
+        assert test_jobs.public_id == self.job_public_id
+        assert test_jobs.job_name == self.job_name
+        assert test_jobs.job_description == self.job_description
+        assert test_jobs.tag == self.tag
+        assert test_jobs.max_exp == Decimal(self.max_exp)
+        assert test_jobs.min_exp == Decimal(self.min_exp)
+        assert test_jobs.active == self.active
+        assert test_jobs.start_date == self.start_date
+        assert test_jobs.end_date == self.end_date
+        assert test_jobs.skill == self.technical_skills
 
     def test_subscriber(self):
         subscriber_create = Subscribers.objects.get(
@@ -107,11 +107,11 @@ class TestModels(TestCase):
             status=self.status,
         )
 
-        self.assert subscriber_create.public_id == self.subscriber_public_id
-        self.assert subscriber_create.name == self.subscriber_name
-        self.assert subscriber_create.email == self.email
-        self.assert subscriber_create.location == self.location
-        self.assert subscriber_create.status== self.status
+        assert subscriber_create.public_id == self.subscriber_public_id
+        assert subscriber_create.name == self.subscriber_name
+        assert subscriber_create.email == self.email
+        assert subscriber_create.location == self.location
+        assert subscriber_create.status== self.status
 
     def test_apply(self):
         apply = Apply.objects.create(
@@ -121,7 +121,7 @@ class TestModels(TestCase):
             resume=self.resume,
         )
         apply.skill.add(self.skills.id)
-        self.assert apply.public_id == self.apply_public_id
-        self.assert apply.name == self.user_name
-        self.assert apply.email == self.email
-        self.assert apply.resume == self.resume
+        assert apply.public_id == self.apply_public_id
+        assert apply.name == self.user_name
+        assert apply.email == self.email
+        assert apply.resume == self.resume
